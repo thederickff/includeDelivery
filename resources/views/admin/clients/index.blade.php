@@ -4,6 +4,8 @@
 
     @include('layouts.panelUp')
     <div class="panel-heading">
+
+        @include('layouts.back')
         <h2>Clients</h2>
 
         <a href="{{route('admin.clients.create')}}" class="btn btn-default">New Client</a>

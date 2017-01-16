@@ -4,6 +4,7 @@
 
     @include('layouts.panelUp')
     <div class="panel-heading">
+
         <h2>Create Category</h2>
 
     </div>

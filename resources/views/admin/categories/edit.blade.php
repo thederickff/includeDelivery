@@ -4,6 +4,7 @@
 
     @include('layouts.panelUp')
     <div class="panel-heading">
+
         <h2>Edit Category</h2>
 
     </div>

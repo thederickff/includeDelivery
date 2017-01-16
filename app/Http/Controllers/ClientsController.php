@@ -5,15 +5,18 @@ namespace CodeDelivery\Http\Controllers;
 
 use CodeDelivery\Http\Requests\ClientRequest;
 use CodeDelivery\Repositories\ClientRepository;
+use CodeDelivery\Services\ClientService;
 
 class ClientsController extends Controller
 {
     //
     protected $client;
+    protected $clientService;
 
-    public function __construct(ClientRepository $repository)
+    public function __construct(ClientRepository $repository, ClientService $clientService)
     {
         $this->client = $repository;
+        $this->clientService = $clientService;
     }
 
 
@@ -31,8 +34,8 @@ class ClientsController extends Controller
 
     public function store(ClientRequest $request)
     {
-
-        $this->client->create($request->all());
+        $data = $request->all();
+        $this->clientService->create($data);
         return redirect()->route('admin.clients');
     }
 
@@ -45,7 +48,9 @@ class ClientsController extends Controller
 
     public function update(ClientRequest $request, $id)
     {
-        $this->client->find($id)->update($request->all());
+        $data = $request->all();
+
+        $this->clientService->update($data, $id);
         return redirect()->route('admin.clients');
     }
 

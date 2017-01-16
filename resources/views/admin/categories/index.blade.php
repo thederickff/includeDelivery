@@ -4,6 +4,7 @@
 
     @include('layouts.panelUp')
     <div class="panel-heading">
+        @include('layouts.back')
         <h2>Categories</h2>
 
         <a href="{{route('admin.categories.create')}}" class="btn btn-default">New Category</a>
