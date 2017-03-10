@@ -4,30 +4,29 @@
 
     @include('layouts.panelUp')
     <div class="panel-heading">
-        @include('layouts.back')
-        <h2>Clients</h2>
 
-        <a href="{{route('admin.clients.create')}}" class="btn btn-default">New Client</a>
+        @include('layouts.back')
+        <h2>Orders</h2>
+
+        <a href="" class="btn btn-default">New Order</a>
     </div>
     <div class="panel-body">
         <table class="table table-hover">
             <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
                 <th>Action</th>
             </tr>
             </thead>
             <tbody>
 
-            @foreach($clients as $client)
+            @foreach($orders as $client)
                 <tr>
 
                     <td>{{$client->id}}</td>
-                    <td>{{$client->user->name}}</td>
-                    <td><a href="{{route('admin.clients.edit', ['id'=> $client->id])}}"
+                    <td><a href=""
                            class="btn btn-primary btn-sm">Edit</a>
-                        <a href="{{route('admin.clients.destroy', ['id'=> $client->id])}}"
+                        <a href=""
                            class="btn btn-danger btn-sm">Delete</a>
                     </td>
                 </tr>
@@ -37,7 +36,7 @@
         </table>
     </div>
     <div class="text-center">
-        {!! $clients->render() !!}
+        {!! $orders->render() !!}
     </div>
     @include('layouts.panelDown')
 
