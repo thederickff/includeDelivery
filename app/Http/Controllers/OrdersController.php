@@ -19,4 +19,9 @@ class OrdersController extends Controller
 
         return view('admin.orders.index', compact('orders'));
     }
+    public function edit($id){
+        $order = $this->repository->find($id);
+
+        return view('admin.orders.edit', compact('order'));
+    }
 }

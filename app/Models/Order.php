@@ -21,6 +21,9 @@ class Order extends Model implements Transformable
     {
         return $this->hasMany(OrderItem::class);
     }
+    public function client(){
+        return $this->belongsTo(Client::class);
+    }
 
     public function deliveryman()
     {
