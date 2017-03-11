@@ -19,8 +19,16 @@
 
     <!-- Form Input -->
         <div class="form-group">
+        {!! Form::model($order, ['route' => ['admin.orders.update', $order->id],'method' => 'post']) !!}
 
-            {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+        @include('admin.orders._form')
+        <!-- Form Input -->
+            <div class="form-group">
+
+                {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+            </div>
+
+            {!! Form::close() !!}
         </div>
 
 
