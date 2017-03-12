@@ -34,17 +34,28 @@
                     <td>{{$order->created_at}}</td>
                     <td>
                         <ul>
-                        @foreach($order->items as $item)
-                            <li>{{$item->product->name}}</li>
-                        @endforeach
+                            @foreach($order->items as $item)
+                                <li>{{$item->product->name}}</li>
+                            @endforeach
                         </ul>
                     </td>
                     <td>@if($order->deliveryman)
                             {{$order->deliveryman->name}}
+
                         @else
-                            --
+                            Sem entregador
                         @endif</td>
-                    <td>{{$order->status}}</td>
+                    <td>
+                        @if($order->status == 0)
+                            Pendente
+                        @elseif($order->status == 1)
+                            A caminho
+                        @elseif($order->status == 2)
+                            Entrege
+                        @else
+                            Cancelado
+                        @endif
+                    </td>
                     <td>
                         <div class="row">
                             <div class="col-xs-12 col-sm-6">
