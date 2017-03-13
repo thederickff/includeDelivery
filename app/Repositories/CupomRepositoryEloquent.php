@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Repositories;
+namespace CodeDelivery\Repositories;
 
+use CodeDelivery\Models\Cupom;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use App\Repositories\CupomRepository;
-use App\Models\Cupom;
-use App\Validators\CupomValidator;
+use CodeDelivery\Repositories\CupomRepository;
+//use App\Validators\CupomValidator;
 
 /**
  * Class CupomRepositoryEloquent
