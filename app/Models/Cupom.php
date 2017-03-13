@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace CodeDelivery\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Prettus\Repository\Contracts\Transformable;
@@ -10,6 +10,9 @@ class Cupom extends Model implements Transformable
 {
     use TransformableTrait;
 
-    protected $fillable = [];
+    protected $fillable = [
+        'code',
+        'value'
+    ];
 
 }
