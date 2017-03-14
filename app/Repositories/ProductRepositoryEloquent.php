@@ -16,7 +16,7 @@ class ProductRepositoryEloquent extends BaseRepository implements ProductReposit
 {
 
     public function listStyle(){
-        return $this->model->pluck('name', 'id');
+        return $this->model->get(['id', 'name' , 'price']);
     }
 
     /**
