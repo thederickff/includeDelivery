@@ -66,7 +66,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth.checkrole'], function (
 
         Route::get('', ['as' => 'admin.cupoms', 'uses' => 'CupomController@index']);
         Route::get('create', ['as' => 'admin.cupoms.create', 'uses' => 'CupomController@create']);
-        Route::post('store/{id}', ['as' => 'admin.cupoms.store', 'uses' => 'CupomController@store']);
+        Route::post('store', ['as' => 'admin.cupoms.store', 'uses' => 'CupomController@store']);
     });
 });
 
