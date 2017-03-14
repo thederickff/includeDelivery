@@ -14,7 +14,7 @@
         <div class="form-group">
             <label for="total">Total: </label>
             <p id="total"></p>
-            <a href="#" class="btn btn-default">New Item</a>
+            <a href="#" id="newitembutton" class="btn btn-default">New Item</a>
 
             <table class="table table-hover">
                 <thead>
@@ -44,5 +44,31 @@
         {!! Form::close() !!}
     </div>
     @include('layouts.panelDown')
+
+@endsection
+
+@section('script')
+
+    <script>
+        $('#newitembutton').click(function () {
+
+            var row = $('table tbody > tr:last');
+            var newRow = row.clone();
+            var length = $('table tbody tr').length;
+
+            newRow.find('td').each(function () {
+                var td = $(this);
+                var input = td.find('input, select');
+                var name = input.attr('name');
+
+                input.attr('name', name.replace((length-1) + "", length + ""));
+            });
+
+            newRow.find('input').val(1);
+            newRow.insertAfter(row);
+
+            });
+
+    </script>
 
 @endsection
