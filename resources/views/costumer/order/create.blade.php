@@ -10,7 +10,7 @@
     @include('layouts.errorCheck')
     <div class="panel-body">
 
-        {!! Form::open(['class' => 'form']) !!}
+        {!! Form::open(['route' => 'costumer.store', 'class' => 'form']) !!}
         <div class="form-group">
             <label for="total">Total: </label>
             <p id="total">R$ 0</p>
@@ -40,6 +40,9 @@
                 </tr>
                 </tbody>
             </table>
+        </div>
+        <div class="form-group">
+            {!! Form::submit('Make Order', ['class' => 'btn btn-primary']) !!}
         </div>
         {!! Form::close() !!}
     </div>
