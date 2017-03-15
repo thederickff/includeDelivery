@@ -69,7 +69,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth.checkrole', 'as' => 'ad
         Route::post('store', ['as' => 'cupoms.store', 'uses' => 'CupomController@store']);
     });
 });
-Route::group(['prefix' => 'costumer', 'as' => 'costumer.'], function(){
+Route::group(['prefix' => 'costumer', 'as' => 'costumer.', 'middleware' => 'CodeDelivery\Http\Middleware\ClientMiddleware'], function(){
 
     Route::get('order', ['as' => 'index', 'uses' => 'CheckoutController@index']);
     Route::get('order/create', ['as' => 'create', 'uses' => 'CheckoutController@create']);
