@@ -78,6 +78,9 @@
         $(document.body).on('click', 'input', function () {
             calcTotal();
         });
+        $(document.body).on('blur', 'input', function () {
+            calcTotal();
+        });
         function calcTotal() {
 
             var length = $('table tbody tr').length;
