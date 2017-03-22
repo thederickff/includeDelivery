@@ -23,7 +23,17 @@
                 <tr>
                     <td>{{$order->id}}</td>
                     <td>{{$order->total}}</td>
-                    <td>{{$order->status}}</td>
+                    <td>
+                       @if($order->status == 0)
+                          Pendente
+                      @elseif($order->status == 1)
+                          A caminho
+                      @elseif($order->status == 2)
+                          Entregue
+                      @else
+                          Cancelado
+                      @endif
+                    </td>
 
                 </tr>
             @endforeach

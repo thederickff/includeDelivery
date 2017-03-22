@@ -51,7 +51,7 @@
                         @elseif($order->status == 1)
                             A caminho
                         @elseif($order->status == 2)
-                            Entrege
+                            Entregue
                         @else
                             Cancelado
                         @endif
