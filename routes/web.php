@@ -76,3 +76,7 @@ Route::group(['prefix' => 'costumer', 'as' => 'costumer.', 'middleware' => 'Code
     Route::post('order/store', ['as' => 'store', 'uses' => 'CheckoutController@store']);
 });
 
+Route::post('oauth/access_token', function() {
+    return Response::json(Authorizer::issueAccessToken());
+});
+
