@@ -1,3 +1,9 @@
+# Include Delivery
+
+This repository, currently is only used for **reference**, when I forget someting about the Laravel framework, I come here and look the forgotten stuff.
+
+e.g. How to create seeds, How to create a basic CRUD, etc.
+
 # Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
